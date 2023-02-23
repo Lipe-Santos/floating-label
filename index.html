@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Floating Label</title>
+    <style> 
+        @import url('httpsfonts.googleapis.comcss2family=Roboto&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #042940;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .inputBox {
+            width: 250px;
+            position: relative;
+        }
+
+        .inputBox input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #9FC131;
+            border-radius: 5px;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        .inputBox input:focus,
+        .inputBox input:valid {
+            outline: 0;
+            border-color: #DBF227;
+        }
+
+        .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 10px;
+            color: #D6D58E;
+            pointer-events: none;
+        }
+
+        .inputBox input, .inputBox span {
+            transition: .5s;
+        }
+
+        .inputBox input:focus + span,
+        .inputBox input:valid + span {
+            color: #DBF227;
+            font-size: 0.65em;
+            padding: 0 10px;
+            transform: translate(10px, -5px);
+            background-color: #042940;
+            border-left: 2px solid #DBF227;
+            border-right: 2px solid #DBF227;
+            letter-spacing: 0.1em;
+        }
+
+        .inputBox:nth-child(2) input:focus + span,
+        .inputBox:nth-child(2) input:valid + span {
+            background-color: #DBF227;
+            color: #042940;
+            border: 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="inputBox">
+        <input type="text" name="firstName" id="firstName" required>
+        <span>First Name</span>
+    </div>
+    <div class="inputBox">
+        <input type="text" name="lastName" id="lastName" required>
+        <span>Last Name</span>
+    </div>
+</body>
+</html>
